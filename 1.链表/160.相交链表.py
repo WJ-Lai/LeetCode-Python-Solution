@@ -15,7 +15,6 @@ class Solution(object):
     # 若无重叠的话，A自己+B自己 = B自己+A自己
     # 若有重叠的话，A自己+重叠+B自己=B自己+重叠+A自己，则下一个必为重叠开头的元素
 
-
     # 双指针法
     def getIntersectionNode(self, headA, headB):
         """
