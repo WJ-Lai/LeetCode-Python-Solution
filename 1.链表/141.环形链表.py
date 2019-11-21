@@ -6,11 +6,12 @@
 
 class Solution(object):
 
-    # 其他方法
-    # 修改数据法，一个指针遍历，每到一个地方val改为None
+    # 双指针法，时间复杂度O(n)，空间复杂度O(n)
+    # 哈希表法，时间复杂度O(n)，空间复杂度O(1)
+    # 修改数据法，一个指针遍历，每到一个地方val改为None，时间复杂度O(n)，空间复杂度O(1)
     # 限时法/限数法，限制遍历指针的时间/数量，超过阈值则认为有环
 
-    # 双指针法，时间复杂度O(N)，空间复杂度O(N)
+    # 双指针法，时间复杂度O(n)，空间复杂度O(n)
     def hasCycle(self, head):
         """
         :type head: ListNode
@@ -30,7 +31,7 @@ class Solution(object):
                 l_fast = l_fast.next
         return False
 
-    # 哈希表法，时间复杂度O(N)，空间复杂度O(1)
+    # 哈希表法，时间复杂度O(n)，空间复杂度O(1)
     def hasCycle2(self, head):
         """
         :type head: ListNode

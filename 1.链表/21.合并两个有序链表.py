@@ -11,7 +11,11 @@
 #         self.next = next
 
 class Solution(object):
-    # 递归法
+
+    # 递归法，时间复杂度O(m+n)，空间复杂度O(m+n)
+    # 迭代法，时间复杂度O(m+n)，空间复杂度O(1)
+
+    # 递归法，时间复杂度O(m+n)，空间复杂度O(m+n)
     def mergeTwoLists1(self, l1, l2):
         """
         :type l1: ListNode
@@ -29,7 +33,7 @@ class Solution(object):
             l2.next = self.mergeTwoLists(l1, l2.next)
             return l2
 
-    # 迭代法
+    # 迭代法，时间复杂度O(m+n)，空间复杂度O(1)
     def mergeTwoLists2(self, l1, l2):
         """
         :type l1: ListNode
