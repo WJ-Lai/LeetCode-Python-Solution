@@ -15,7 +15,7 @@ class Solution(object):
     # 若无重叠的话，A自己+B自己 = B自己+A自己
     # 若有重叠的话，A自己+重叠+B自己=B自己+重叠+A自己，则下一个必为重叠开头的元素
 
-    # 双指针法
+    # 双指针法，时间复杂度O(m+n)，空间复杂度O(1)
     def getIntersectionNode(self, headA, headB):
         """
         :type head1, head1: ListNode
@@ -27,12 +27,12 @@ class Solution(object):
             preHeadB = preHeadB.next if preHeadB else headA
         return preHeadA
 
+    # 哈希表法，时间复杂度O(m+n)，空间复杂度O(m)/O(n)
     def getIntersectionNode2(self, headA, headB):
         """
         :type head1, head1: ListNode
         :rtype: ListNode
         """
-        # 哈希表法
         hashIDs = {}
         while headA:
             hashIDs[id(headA)] = 1
