@@ -12,8 +12,7 @@ class Solution(object):
     # 递归思路
     # 若第1~k个节点还没改好，后面的第k+1~m个节点已经改好，那么对于第k个节点要进行的更改公式就是nk.next.next=nk
 
-
-    # 迭代法
+    # 迭代法，时间复杂度O(n)，空间复杂度O(1)
     def reverseList(self, head):
         """
         :type head: ListNode
