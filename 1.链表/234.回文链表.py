@@ -1,8 +1,8 @@
 # Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, x, next=None):
-        self.val = x
-        self.next = next
+# class ListNode(object):
+#     def __init__(self, x, next=None):
+#         self.val = x
+#         self.next = next
 
 class Solution(object):
 
@@ -77,5 +77,5 @@ class Solution(object):
             i, j = i+1, j-1
         return True
 
-l = ListNode(1, ListNode(2))
-print(Solution().isPalindrome2(l))
+# l = ListNode(1, ListNode(2))
+# print(Solution().isPalindrome2(l))
