@@ -6,6 +6,11 @@ class ListNode(object):
 
 class Solution(object):
 
+    # 快慢指针法：时间复杂度O(n),空间复杂度O(n)
+    # 快慢指针同时走，找到链表的中点。
+    # 同时慢指针到达中点之前走的时候不断记录节点值。
+    # 到了中点后按照先进后出的特点，再将存入的值和之后的值对比。
+
     # 双指针+反转链表：时间复杂度O(n),空间复杂度O(1)
     # 数组法:头和尾同时向中间靠近：时间复杂度O(n),空间复杂度O(n)
 
@@ -33,6 +38,30 @@ class Solution(object):
                 return False
             a, b = a.next, b.next
         return True
+
+    # 快慢指针法：时间复杂度O(n),空间复杂度O(n)
+    def isPalindrome2(self, head):
+        if not (head and head.next): return True
+        p = ListNode(-1)
+        # p.next要指向head，否则low和fast的next为空
+        p.next, slow, fast = head, p, p
+        node_stack = []
+        # 找到中点
+        while fast and fast.next:
+            slow, fast = slow.next, fast.next.next
+            node_stack.append(slow.val)
+
+        slow = slow.next
+        # 对比栈内元素和慢指针之后的元素
+        # 如果链表个数为奇数个，则pop掉中间的值
+        if not fast:
+            node_stack.pop()
+        while slow:
+            slow, slow_val, node_val = slow.next, slow.val, node_stack.pop()
+            if slow_val != node_val:
+                return False
+        return True
+
 
     # 数组法:头和尾同时向中间靠近：时间复杂度O(n),空间复杂度O(n)
     def isPalindrome3(self, head):
