@@ -20,11 +20,11 @@ class Solution(object):
         :type root: TreeNode
         :rtype: TreeNode
         """
-        if not root: return
-        self.convertBST(root.right)
-        self.total += root.val
-        root.val = self.total
-        self.convertBST(root.left)
+        if root:
+            self.convertBST(root.right)
+            self.total += root.val
+            root.val = self.total
+            self.convertBST(root.left)
         return root
 
     # 栈迭代：时间复杂度O(n),空间复杂度O(n)
