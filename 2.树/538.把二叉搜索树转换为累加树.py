@@ -45,7 +45,7 @@ class Solution(object):
             node = node.left
         return root
 
-    # 反序中序Morris遍历
+    # 反序中序Morris遍历：时间复杂度O(n),空间复杂度O(1)
     def convertBST2(self, root):
         # 找到仅比node大的节点
         # 即右子树中的最小值
